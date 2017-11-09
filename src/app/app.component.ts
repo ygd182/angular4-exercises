@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   complete($event) {
-  	console.log();
+  	console.log('termino');
   }
 }
