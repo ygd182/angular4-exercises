@@ -1,5 +1,5 @@
 <p>
   counter works!
 </p>
-<span>{{value}}</span>
+<span>{{counterService.countdown$ | async}}</span>
 <button (click)="restart()">Restart</button>

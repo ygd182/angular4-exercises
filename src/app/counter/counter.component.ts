@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy  } from '@angular/core';
 import {CounterService} from './counter.service';
 import { Subscription } from "rxjs/Subscription";
 
@@ -6,7 +6,9 @@ import { Subscription } from "rxjs/Subscription";
   selector: 'counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css'],
-  providers: [CounterService]
+  providers: [CounterService],
+  
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CounterComponent implements OnInit {
 	@Input() value: number;
