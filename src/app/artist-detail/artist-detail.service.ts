@@ -14,7 +14,7 @@ export class ArtistDetailService {
 
 
   getArtistDetails(name:string): Observable<any> {
-  	const url= 'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist='+name +'&api_key=1514f551e71e2ebe34c098b945c259ca&format=json';
+  	const url= 'https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist='+name +'&api_key=1514f551e71e2ebe34c098b945c259ca&format=json';
   	return this.http.get(url)
                         // ...and calling .json() on the response to return data
                          .map((res:Response) => res.json())
@@ -24,7 +24,7 @@ export class ArtistDetailService {
   }
 
   getArtistTopTracks(name:string): Observable<any> {
-  	const url= 'http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist='+name +'&api_key=1514f551e71e2ebe34c098b945c259ca&format=json';
+  	const url= 'https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist='+name +'&api_key=1514f551e71e2ebe34c098b945c259ca&format=json';
   	return this.http.get(url)
                         // ...and calling .json() on the response to return data
                          .map((res:Response) => res.json())
@@ -34,7 +34,7 @@ export class ArtistDetailService {
   }
 
   getArtistTopAlbums(name:string): Observable<any> {
-  	const url= 'http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist='+name +'&api_key=1514f551e71e2ebe34c098b945c259ca&format=json';
+  	const url= 'https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist='+name +'&api_key=1514f551e71e2ebe34c098b945c259ca&format=json';
   	return this.http.get(url)
                         // ...and calling .json() on the response to return data
                          .map((res:Response) => res.json())
