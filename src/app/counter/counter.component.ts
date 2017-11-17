@@ -14,9 +14,9 @@ export class CounterComponent implements OnInit {
 	@Input() value: number;
 	@Output() onComplete = new EventEmitter<void>();
 	private countdownEndRef: Subscription = null;
-	private countdown: Subscription = null;
+	 countdown: Subscription = null;
 
-	constructor(private counterService: CounterService) { }
+	constructor(public counterService: CounterService) { }
 
 	ngOnInit() {
 		this.counterService.restartCountdown(this.value);
