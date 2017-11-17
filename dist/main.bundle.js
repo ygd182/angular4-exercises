@@ -146,7 +146,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "img {\n  width: 200px;\n  height: 200px;\n}", ""]);
 
 // exports
 
