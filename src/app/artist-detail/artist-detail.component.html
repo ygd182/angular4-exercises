@@ -1,0 +1,27 @@
+<h1>
+  artist-detail
+</h1>
+
+<h2>{{artist.name}}</h2>
+
+<div>
+	<a href="{{artist.url}}">{{artist.url}}</a>
+</div>
+<div>
+	<img src="{{artist.img}}">
+</div>
+
+<h3>Top tracks</h3>
+<ul>
+	<li *ngFor="let track of artist.topTracks">		
+		{{track.name}}
+	</li>
+</ul>
+<h3>Top albums</h3>
+<ul>
+	<li *ngFor="let album of artist.topAlbums">		
+		{{album.name}}
+	</li>
+</ul>
+
+

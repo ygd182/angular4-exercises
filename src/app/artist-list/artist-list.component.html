@@ -1,0 +1,9 @@
+<h1>
+  artist-list
+</h1>
+
+<ul>
+	<li *ngFor="let artist of artistListArray">		
+		<a [routerLink]="['/artist-detail/',artist.name.replace(' ', '+')]">{{artist.name}}</a>
+	</li>
+</ul>
