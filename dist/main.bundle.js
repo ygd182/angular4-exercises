@@ -73,7 +73,6 @@ AppComponent = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export ROUTES */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
@@ -106,7 +105,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var ROUTES = [
-    { path: '', redirectTo: 'artist-list', pathMatch: 'full' },
+    { path: '', redirectTo: '/artist-list', pathMatch: 'full' },
     { path: 'artist-list', component: __WEBPACK_IMPORTED_MODULE_8__artist_list_artist_list_component__["a" /* ArtistListComponent */] },
     { path: 'artist-detail/:name', component: __WEBPACK_IMPORTED_MODULE_10__artist_detail_artist_detail_component__["a" /* ArtistDetailComponent */] }
 ];
