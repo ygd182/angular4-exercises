@@ -5,11 +5,12 @@
   "scripts": {
     "ng": "ng",
     "start-dev": "ng serve",
-    "start": "node server.js",
+    "start": "start": "http-server dist/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "preinstall": "npm install -g http-server"
   },
   "private": true,
   "dependencies": {
