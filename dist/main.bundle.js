@@ -146,7 +146,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "img {\n  width: 200px;\n  height: 200px;\n}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -159,7 +159,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/artist-detail/artist-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>\n  artist-detail\n</h1>\n\n<h2>{{artist.name}}</h2>\n\n<div>\n\t<a href=\"{{artist.url}}\">{{artist.url}}</a>\n</div>\n<div>\n\t<img src=\"{{artist.img}}\">\n</div>\n\n<h3>Top tracks</h3>\n<ul>\n\t<li *ngFor=\"let track of artist.topTracks\">\t\t\n\t\t{{track.name}}\n\t</li>\n</ul>\n<h3>Top albums</h3>\n<ul>\n\t<li *ngFor=\"let album of artist.topAlbums\">\t\t\n\t\t{{album.name}}\n\t</li>\n</ul>\n\n\n"
+module.exports = "<h1>\n  artist-detail\n</h1>\n\n<h2>{{artist.name}}</h2>\n\n<div>\n\t<a href=\"{{artist.url}}\">{{artist.url}}</a>\n</div>\n<div>\n\t<img src=\"{{artist.img}}\" height=\"300\" width=\"300\">\n</div>\n\n<h3>Top tracks</h3>\n<ul>\n\t<li *ngFor=\"let track of artist.topTracks\">\t\t\n\t\t{{track.name}}\n\t</li>\n</ul>\n<h3>Top albums</h3>\n<ul>\n\t<li *ngFor=\"let album of artist.topAlbums\">\t\t\n\t\t{{album.name}}\n\t</li>\n</ul>\n\n\n"
 
 /***/ }),
 
