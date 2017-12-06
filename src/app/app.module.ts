@@ -4,37 +4,35 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+
 
 import { AppComponent } from './app.component';
-import { CounterComponent } from './counter/counter.component';
-import { UserGeneratorComponent } from './user-generator/user-generator.component';
-import {UserGeneratorService} from './user-generator/user-generator.service';
+import { Routing } from './app.routes';
 import { ArtistListComponent } from './artist-list/artist-list.component';
-import {ArtistListService } from './artist-list/artist-list.service';
+import { ArtistListService } from './artist-list/artist-list.service';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { ArtistDetailService } from './artist-detail/artist-detail.service';
+import { LoginComponent } from './login/login.component';
 
-const ROUTES: Routes = [
-  { path: '', redirectTo: '/artist-list', pathMatch: 'full'  },
-  { path: 'artist-list', component: ArtistListComponent },
-  { path: 'artist-detail/:name', component: ArtistDetailComponent }
-];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent,
-    UserGeneratorComponent,
     ArtistListComponent,
-    ArtistDetailComponent
+    ArtistDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES),
-    HttpModule
+    HttpModule,
+    Routing,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [UserGeneratorService, ArtistListService, ArtistDetailService],
+  providers: [ArtistListService, ArtistDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
