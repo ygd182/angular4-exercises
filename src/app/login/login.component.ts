@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators, FormsModule } from '@angular/forms'; 
+import { AuthService } from './../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   });
 
   constructor (private formBuilder: FormBuilder,
-  			   private router: Router) { }
+  			   private router: Router,
+  			   private authService: AuthService) { }
 
   ngOnInit() {
   	this.loginError = false;
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit {
   }
 
   saveToken() {
+  	this.authService.login();
   	sessionStorage.setItem('token', 'something');
   }
 

@@ -9,7 +9,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
-import { ActivateGuard } from './app.activate.guard';
+import { AuthGuardService } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
 
 import { AppComponent } from './app.component';
 import { Routing } from './app.routes';
@@ -18,6 +19,7 @@ import { ArtistListService } from './artist-list/artist-list.service';
 import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { ArtistDetailService } from './artist-detail/artist-detail.service';
 import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 
 
@@ -26,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     ArtistListComponent,
     ArtistDetailComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,11 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     NgbModule.forRoot()
   ],
-  providers: [ArtistListService, ArtistDetailService, ActivateGuard],
+  providers: [ArtistListService, 
+    ArtistDetailService, 
+    AuthGuardService, 
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
