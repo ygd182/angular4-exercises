@@ -12,14 +12,16 @@
 </div>
 
 <h3>Top tracks</h3>
-<ul>
-	<li *ngFor="let track of artist.topTracks">		
+
+<ul class="list-group">
+	<li class="list-group-item" *ngFor="let track of artist.topTracks">		
 		{{track.name}}
 	</li>
 </ul>
 <h3>Top albums</h3>
-<ul>
-	<li *ngFor="let album of artist.topAlbums">		
+
+<ul class="list-group">
+	<li class="list-group-item" *ngFor="let album of artist.topAlbums">		
 		{{album.name}}
 	</li>
 </ul>

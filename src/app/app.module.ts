@@ -6,7 +6,10 @@ import { HttpModule } from '@angular/http';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+
+import { ActivateGuard } from './app.activate.guard';
 
 import { AppComponent } from './app.component';
 import { Routing } from './app.routes';
@@ -30,9 +33,10 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     Routing,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
-  providers: [ArtistListService, ArtistDetailService],
+  providers: [ArtistListService, ArtistDetailService, ActivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

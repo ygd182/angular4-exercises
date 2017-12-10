@@ -2,8 +2,8 @@
   artist-list
 </h1>
 
-<ul>
-	<li *ngFor="let artist of artistListArray">		
+<ul class="list-group">
+	<li class="list-group-item" *ngFor="let artist of artistListArray">		
 		<a [routerLink]="['/artist-detail/',artist.name.replace(' ', '+')]">{{artist.name}}</a>
 	</li>
 </ul>

@@ -30,13 +30,23 @@ export class LoginComponent implements OnInit {
 
     if(this.loginForm.valid) {
     	this.router.navigate(['/artist-list']);
+    	this.saveToken();
     } else {
     	this.loginError = true;
     }
   }
 
   onSubmit({ value, valid }: { value: any, valid: boolean }) {
+  	if(valid) {
+  		this.saveToken();
+  		this.router.navigate(['/artist-list']);
+  	}
+  	
     console.log(value, valid);
+  }
+
+  saveToken() {
+  	sessionStorage.setItem('token', 'something');
   }
 
 }
