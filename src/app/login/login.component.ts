@@ -49,7 +49,6 @@ export class LoginComponent implements OnInit {
 
   saveToken() {
   	this.authService.login();
-  	sessionStorage.setItem('token', 'something');
   }
 
 }

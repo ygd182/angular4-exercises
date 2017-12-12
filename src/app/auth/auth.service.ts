@@ -8,6 +8,12 @@ export class AuthService {
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   get isLoggedIn() {
+  	if(!this.loggedIn.value) {
+  		const token = sessionStorage.getItem('isLoggedIn');
+  		if(token) {
+  			this.loggedIn.next(true);
+  		}
+  	} 
     return this.loggedIn.asObservable();
   }
 
@@ -16,6 +22,7 @@ export class AuthService {
   ) {}
 
   login(){
+  	sessionStorage.setItem('isLoggedIn', 'true');
     this.loggedIn.next(true);
   }
 

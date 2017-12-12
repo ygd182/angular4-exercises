@@ -20,7 +20,7 @@ export class ArtistDetailComponent implements OnInit {
   	let observablesArray = []; 
   	this.artist = {
   		topTracks : [],
-		topAlbums:  []
+		  topAlbums:  []
 	};
 
   	this.sub = this.route.params.subscribe(params => {
@@ -30,9 +30,8 @@ export class ArtistDetailComponent implements OnInit {
        observablesArray.push(this.artistDetailService.getArtistTopAlbums(this.name));
        
         Observable.forkJoin(observablesArray).subscribe((data: any) => {
-        	console.log(data);
 	       	this.artist = data[0].artist;
-	       	this.artist.img = data[0].artist.image[0]['#text'];
+	       	this.artist.img = data[0].artist.image[3]['#text'];
 	       	this.artist.topTracks = data[1].toptracks.track;
 	       	this.artist.topAlbums = data[2].topalbums.album;
        });
