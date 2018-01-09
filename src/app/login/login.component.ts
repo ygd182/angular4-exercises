@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   			   private authService: AuthService) { }
 
   ngOnInit() {
+    this.doLogout();
   	this.loginError = false;
   }
 
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
 
     if(this.loginForm.valid) {
     	this.router.navigate(['/artist-list']);
-    	this.saveToken();
+    	this.doLogin();
     } else {
     	this.loginError = true;
     }
@@ -40,15 +41,19 @@ export class LoginComponent implements OnInit {
 
   onSubmit({ value, valid }: { value: any, valid: boolean }) {
   	if(valid) {
-  		this.saveToken();
+  		this.doLogin();
   		this.router.navigate(['/artist-list']);
   	}
   	
     console.log(value, valid);
   }
 
-  saveToken() {
+  doLogin() {
   	this.authService.login();
+  }
+
+  doLogout() {
+    this.authService.logout();
   }
 
 }

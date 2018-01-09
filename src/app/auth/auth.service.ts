@@ -10,7 +10,7 @@ export class AuthService {
   get isLoggedIn() {
   	if(!this.loggedIn.value) {
   		const token = sessionStorage.getItem('isLoggedIn');
-  		if(token) {
+  		if(token== 'true') {
   			this.loggedIn.next(true);
   		}
   	} 
@@ -28,6 +28,7 @@ export class AuthService {
 
   logout(){
     this.loggedIn.next(false);
+    sessionStorage.setItem('isLoggedIn', 'false');
     this.router.navigate(['/login']);
   }
 }
