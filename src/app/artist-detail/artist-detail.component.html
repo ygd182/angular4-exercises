@@ -14,14 +14,15 @@
 <h3>Top tracks</h3>
 
 <ul class="list-group">
-	<li class="list-group-item" *ngFor="let track of artist.topTracks">		
+	<li class="list-group-item" *ngFor="let track of artist.topTracks | filterQueryPipe: songQuery : 'name'">		
 		{{track.name}}
+		<i class="fa" [ngClass]="{'fa-star-o': !selected, 'fa-star': selected}"  aria-hidden="true"></i>
 	</li>
 </ul>
 <h3>Top albums</h3>
 
 <ul class="list-group">
-	<li class="list-group-item" *ngFor="let album of artist.topAlbums">		
+	<li class="list-group-item" *ngFor="let album of artist.topAlbums">	
 		{{album.name}}
 	</li>
 </ul>

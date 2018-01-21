@@ -3,7 +3,7 @@
 </h1>
 
 <ul class="list-group">
-	<li class="list-group-item" *ngFor="let artist of artistListArray">		
+	<li class="list-group-item" *ngFor="let artist of artistListArray | filterQueryPipe: artistQuery : 'name'">		
 		<a [routerLink]="['/artist-detail/',artist.name.replace(' ', '+')]">{{artist.name}}</a>
 	</li>
 </ul>

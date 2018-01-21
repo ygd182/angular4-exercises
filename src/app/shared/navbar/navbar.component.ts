@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../../auth/auth.service';
 import { Observable } from 'rxjs/Observable';
+import { DataCommunication } from '../data-communication/data-communication';
+import { DataCommunicationService } from '../data-communication/data-communication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,13 +12,16 @@ import { Observable } from 'rxjs/Observable';
 export class NavbarComponent implements OnInit {
 	show: boolean;
   isLoggedIn$: Observable<boolean>;
+  searchValue: string;
 
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private dataCommunicationService: DataCommunicationService) { }
 
   ngOnInit() {
   	this.show = false;
     this.isLoggedIn$ = this.authService.isLoggedIn;
+    this.searchValue = '';
   }
 
   getLoggedIn() {
@@ -33,6 +38,13 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+  }
+
+  doSearch($event) {
+    let dataCommunication = new DataCommunication();
+    dataCommunication.id = 'search';
+    dataCommunication.data = this.searchValue;
+    this.dataCommunicationService.emit(dataCommunication);
   }
 
 }

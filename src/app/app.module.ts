@@ -8,9 +8,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { DataCommunication } from './shared/data-communication/data-communication';
 
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
+import { DataCommunicationService } from './shared/data-communication/data-communication.service';
 
 import { AppComponent } from './app.component';
 import { Routing } from './app.routes';
@@ -20,6 +22,8 @@ import { ArtistDetailComponent } from './artist-detail/artist-detail.component';
 import { ArtistDetailService } from './artist-detail/artist-detail.service';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FilterQueryPipe } from './shared/search/filter-query.pipe';
+import { LoadingBarComponent } from './shared/loading-bar/loading-bar.component';
 
 
 
@@ -29,7 +33,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     ArtistListComponent,
     ArtistDetailComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    FilterQueryPipe,
+    LoadingBarComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   providers: [ArtistListService, 
     ArtistDetailService, 
     AuthGuardService, 
-    AuthService
+    AuthService,
+    DataCommunicationService
   ],
   bootstrap: [AppComponent]
 })

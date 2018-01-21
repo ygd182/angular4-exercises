@@ -21,9 +21,9 @@
         </li>
       </ul>
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit" (click)="doSearch($event)">Search</button>
       </form>
-       <button (click)="logout()" class="btn btn-secondary">Logout</button>
+       <button (click)="logout()" class="btn btn-secondary logout-btn">Logout</button>
     </div>
   </nav>
