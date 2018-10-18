@@ -1,0 +1,66 @@
+<div class="login-container">
+	<form class="form-horizontal login-form" [formGroup]="loginForm">
+		<h2>	Login Reactive</h2>
+		<div class="">
+		 <div class="input-group">
+			 	<span class="input-group-addon" id="basic-addon1">@</span>
+			 	
+				<input class="form-control" type="email" placeholder="Email" formControlName="email">
+			</div>
+			
+			<div class="error" *ngIf="(loginForm.get('email').touched || loginError) && loginForm.get('email').hasError('required')">
+		        Email is required
+		    </div>
+		    <div class="error" *ngIf="(loginForm.get('email').touched || loginError) && loginForm.get('email').hasError('email')">
+		        Should be an email
+		    </div>
+		  </div>
+		
+	    <div class="">
+	    	<div class="input-group">
+		 			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-key"></i></span>
+					<input class="form-control" type="password" placeholder="Password" formControlName="password">
+			</div>
+		
+			<div class="error" *ngIf="(loginForm.get('password').touched || loginError) && loginForm.get('password').hasError('required')">
+		        Password is required
+		    </div>
+	    </div>
+	  
+		<button  class="btn btn-primary btn-block" (click)="login($event)">Login</button>
+	</form> 
+
+	
+	<form class="form-horizontal login-form" novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+		<h2>Login Template</h2>
+		<div class="">
+		 <div class="input-group">
+		 	<span class="input-group-addon" id="basic-addon1">@</span>
+			<input class="form-control" type="email" placeholder="Email" type="email" ngModel #userEmail=ngModel  name="userEmail" required email>
+		</div>
+
+			<div class="error" *ngIf="(userEmail.touched) && userEmail.errors.required">
+		      Email is required
+	    </div>
+	    <div class="error" *ngIf="(userEmail.touched ) && userEmail.errors.email">
+	        Should be an email
+	    </div>
+		</div>
+	    <div class="">
+	     <div class="input-group">
+		 			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-key"></i></span>
+	     	
+
+					<input class="form-control" type="password" placeholder="Password"  ngModel #userPassword="ngModel" required name="userPassword">
+			</div>
+			<div class="error" *ngIf="(userPassword.touched) && userPassword.errors?.required">
+		        Password is required
+		    </div>
+	   
+	    </div>
+		
+		 <button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Login</button>
+	</form> 
+
+</div>
+
